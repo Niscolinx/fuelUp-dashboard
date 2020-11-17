@@ -9,9 +9,20 @@
 
     &__item{
 
+        
         &:link,
         &:visited{
+            color: $primary-color-light-1;
             text-decoration: none;
         }
+        
+        &:hover{
+            color: black;
+        }
     }
+}
+
+.cards{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
 }

@@ -9,6 +9,10 @@ import axios from '../axios'
 
 import Card from '../components/Layout/Card'
 import Header from '../components/Header'
+
+import card1 from '../assets/images/card-1.png'
+import card2 from '../assets/images/card-2.png'
+import card3 from '../assets/images/card-3.png'
 //import Cart from '../components/cart'
 
 class Home extends Component {
@@ -50,9 +54,27 @@ class Home extends Component {
                                 Invitations
                             </Link>
                         </li>
-            
                     </ul>
-                    <Card />
+                    <div className='cards'>
+                        <Card
+                            img={card1}
+                            heading='Micro-organisms'
+                            subHeading=''
+                            text='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim .Lorem ipsum dolor sit amet'
+                        />
+                        <Card
+                            img={card2}
+                            heading='Medicine'
+                            subHeading='Higher Secondary'
+                            text='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim .Lorem ipsum dolor sit amet'
+                        />
+                        <Card
+                            img={card3}
+                            heading='The Solar System'
+                            subHeading='Higher Secondary'
+                            text='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim .Lorem ipsum dolor sit amet'
+                        />
+                    </div>
                 </div>
             </div>
         )
