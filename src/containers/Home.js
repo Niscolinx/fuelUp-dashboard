@@ -7,8 +7,6 @@ import withErrorHandler from '../components/hoc/withErrorHandler'
 import axios from '../axios'
 
 import Hero from '../components/Layout/Hero'
-import Steps from '../components/Layout/Steps'
-import NewsLetter from '../components/Layout/NewsLetter'
 import Cards from '../components/Layout/Cards'
 //import Cart from '../components/cart'
 
@@ -28,14 +26,6 @@ class Home extends Component {
                         onSelectedCity={this.props.onSelectedCity}
                         onSelectedArea={this.props.onSelectedArea}
                     />
-                </div>
-
-                <div className='secton-steps'>
-                    <Steps />
-                </div>
-
-                <div className='section-newsletter'>
-                    <NewsLetter />
                 </div>
 
                 <div className='section-cards'>
