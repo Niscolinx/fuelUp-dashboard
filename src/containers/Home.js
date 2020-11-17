@@ -6,19 +6,20 @@ import * as actions from '../store/actions/burgerIndex'
 import withErrorHandler from '../components/hoc/withErrorHandler'
 import axios from '../axios'
 
-import Hero from '../components/Layout/Hero'
+import Card from '../components/Layout/Card'
+import Header from '../components/Header'
 //import Cart from '../components/cart'
 
 class Home extends Component {
     render() {
         return (
             <div>
-                <div className='section-Hero'>
-                    <Hero
-                
-                    />
+                <div className='header'>
+                    <Header />
                 </div>
-
+                <div className='section-Card'>
+                    <Card />
+                </div>
             </div>
         )
     }
@@ -26,7 +27,6 @@ class Home extends Component {
 Home.propTypes = {
     areas: PropTypes.array,
     selectedArea: PropTypes.string,
-
 }
 
 const mapStateToProps = (state) => {
