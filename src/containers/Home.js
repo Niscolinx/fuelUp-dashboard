@@ -11,19 +11,11 @@ import Hero from '../components/Layout/Hero'
 
 class Home extends Component {
     render() {
-        console.log('From the home', this.props)
         return (
             <div>
                 <div className='section-Hero'>
                     <Hero
-                        history={this.props.history}
-                        areas={this.props.areas}
-                        selectedArea={this.props.selectedArea}
-                        selectedCity={this.props.selectedCity}
-                        onClearedSelectedCity={this.props.onClearedSelectedCity}
-                        onSelectedAreas={this.props.onSelectedAreas}
-                        onSelectedCity={this.props.onSelectedCity}
-                        onSelectedArea={this.props.onSelectedArea}
+                
                     />
                 </div>
 
@@ -32,14 +24,9 @@ class Home extends Component {
     }
 }
 Home.propTypes = {
-    history: PropTypes.object,
     areas: PropTypes.array,
     selectedArea: PropTypes.string,
-    selectedCity: PropTypes.string,
-    onClearedSelectedCity: PropTypes.func,
-    onSelectedAreas: PropTypes.func,
-    onSelectedCity: PropTypes.func,
-    onSelectedArea: PropTypes.func,
+
 }
 
 const mapStateToProps = (state) => {
