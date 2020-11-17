@@ -1,8 +1,10 @@
+
+
 .toolbar {
     display: grid;
     justify-content: center;
     align-items: center;
-    grid-template-columns: 2fr 1fr 1fr;
+    grid-template-columns: minmax(30rem, 1fr) 2fr max-content;
 
     .navigationItems {
         list-style: none;
@@ -11,16 +13,35 @@
 
         .navigationItem {
             display: grid;
-          //  grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+            font-weight: bold;
 
             &:link,
             &:visited {
+                font-size: 1.15rem;
                 text-decoration: none;
                 padding: 0.5rem 1rem;
             }
         }
     }
 
+    &__1{
+        margin: 0 1rem;
+    }
+
+    &__3 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 1rem 2rem;
+    }
+
+    &__gear,
+    &__notification {
+        font-size: 1.4rem;
+        display: flex;
+        justify-self: center;
+        margin: 0.3rem;
+    }
     &__avatar {
         width: 41px;
         height: 41px;
@@ -28,6 +49,6 @@
         background-repeat: no-repeat;
         object-fit: cover;
         border-radius: 50%;
-        margin: 15px 0 3px 27.2px;
+        margin-left: 1rem;
     }
 }
