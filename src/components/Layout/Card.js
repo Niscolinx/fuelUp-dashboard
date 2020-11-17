@@ -18,10 +18,10 @@ const Card = (props) => {
                     className='card__creator--img'
                 />
                 <div>
-                    <h5 className='card__creator--name'>
+                    <p className='card__creator--name'>
                         Created by {props.creatorName}
-                    </h5>
-                    <p className='card__creator--data'>
+                    </p>
+                    <p className='card__creator--date'>
                         Created on {props.createdAt}
                     </p>
                 </div>
