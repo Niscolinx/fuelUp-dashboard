@@ -1,0 +1,15 @@
+.card-nav{
+    list-style: none;
+    display: grid;
+    gap: .5rem;
+    justify-content: center;
+    grid-template-columns: repeat(8, max-content);
+
+    &__item{
+
+        &:link,
+        &:visited{
+            text-decoration: none;
+        }
+    }
+}

@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
+import { Link } from 'react-router-dom'
 
 import * as actions from '../store/actions/burgerIndex'
 import withErrorHandler from '../components/hoc/withErrorHandler'
@@ -14,10 +15,47 @@ class Home extends Component {
     render() {
         return (
             <div>
-                <div className='header'>
+                <div className='section-header'>
                     <Header />
                 </div>
                 <div className='section-Card'>
+                    <ul className='card-nav'>
+                        <li>
+                            <Link to='/' className='card-nav__item'>
+                                Browse courses
+                            </Link>
+                        </li>
+                        <li>
+                            <Link to='/' className='card-nav__item'>
+                                My courses
+                            </Link>
+                        </li>
+                        <li>
+                            <Link to='/' className='card-nav__item'>
+                                Lectures
+                            </Link>
+                        </li>
+                        <li>
+                            <Link to='/' className='card-nav__item'>
+                                Exams
+                            </Link>
+                        </li>
+                        <li>
+                            <Link to='/' className='card-nav__item'>
+                                Assignments
+                            </Link>
+                        </li>
+                        <li>
+                            <Link to='/' className='card-nav__item'>
+                                Invitations
+                            </Link>
+                        </li>
+                        <li>
+                            <Link to='/' className='card-nav__item'>
+                                Attendance
+                            </Link>
+                        </li>
+                    </ul>
                     <Card />
                 </div>
             </div>

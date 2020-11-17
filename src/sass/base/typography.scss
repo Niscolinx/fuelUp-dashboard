@@ -2,14 +2,38 @@
     padding: 27px 35px 0 35px;
 }
 .content {
-    background-color: red;
     display: grid;
-     grid-template-rows: min-content;
-    grid-template-columns:
-        [sidebar-start] 6rem [sidebar-end full-start] minmax(6rem, 1fr)
-        [center-start] repeat(
-            8,
-            [col-start] minmax(min-content, 14rem) [col-end]
-        )
-        [center-end] minmax(6rem, 1fr) [full-end];
+    // grid-template-rows: min-content;
+    // grid-template-columns: [center-start] repeat(
+    //         8,
+    //         [col-start] minmax(min-content, 14rem) [col-end]
+    //     ) [center-end];
+}
+
+.header {
+    display: grid;
+    padding: 1rem 2rem;
+    align-items: center;
+    background-color: $primary-color-light-1;
+    grid-column: 1 / -1;
+    grid-template-columns: max-content 1fr;
+
+    &__profile{
+        padding: 1rem;
+        color: $primary-color;
+    }
+
+    &__heading{
+        font-size: 2.7rem;
+        font-weight: 700;
+    }
+
+    &__text{
+        font-size: 1.7rem;
+    }
+
+    &__maskGroup {
+        display: grid;
+        justify-self: end;
+    }
 }
