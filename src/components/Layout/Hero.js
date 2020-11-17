@@ -1,20 +1,16 @@
 import React, { Component } from 'react'
 //import { Route, Redirect } from 'react-router-dom'
 
-import { Container, Row, Col } from 'react-bootstrap'
 import imgUrl from '../../assets/images/bg_home.jpg'
 import SelectModal from '../Modal/SelectModal'
 import SelectOptions from '../Modal/SelectOptions'
 
+import Select from 'react-select'
+import makeAnimated from 'react-select/animated'
 
-import Select from 'react-select';
-import makeAnimated from 'react-select/animated';
-
-import { cityOptions } from '../../doc/data';
-
+import { cityOptions } from '../../doc/data'
 
 class Hero extends Component {
-
     state = {
         currentCity: null,
         oldCity: null,
@@ -22,19 +18,15 @@ class Hero extends Component {
         disabled: true,
         disabledPointer: 'not-allowed',
         disabledBackground: '#787878',
-        isAreaTouched: false
+        isAreaTouched: false,
     }
 
-
     handleCityChange = (inputValue: any, actionMeta: any) => {
-
         // console.group('Input Changed');
         // console.log('the input value has been changed and it is now', inputValue);
-
         //  console.log(`action: ${actionMeta}`);
         // console.groupEnd();
-
-    };
+    }
 
     cityChange = (newValue: any, actionMeta: any) => {
         //  console.group('Value Changed', newValue);
@@ -43,7 +35,6 @@ class Hero extends Component {
         // console.log('the meta data', actionMeta);
         // console.log(`action: ${actionMeta.action}`);
         // console.groupEnd();
-
 
         if (newValue !== null) {
             // console.log('loaded city')
@@ -56,7 +47,7 @@ class Hero extends Component {
 
             if (newValue.value !== this.state.currentCity) {
                 this.setState({
-                    newArea: []
+                    newArea: [],
                 })
             }
 
@@ -67,41 +58,34 @@ class Hero extends Component {
                 disabledPointer: 'pointer',
                 disabledBackground: '#fff',
             })
-
-
-        }
-        else {
+        } else {
             // console.log('cleared city')
             this.props.onClearedSelectedCity()
-
 
             this.setState({
                 currentCity: null,
                 disabled: true,
                 disabledPointer: 'not-allowed',
                 disabledBackground: '#787878',
-                newArea: []
+                newArea: [],
             })
         }
-
-    };
+    }
     handleAreaChange = (inputValue: any, actionMeta: any) => {
-
         // console.group('Input Changed', inputValue, 'the Changed value is', actionMeta);
         // console.groupEnd();
 
         if (actionMeta.action === 'set-value') {
             this.setState({
-                isAreaTouched: true
+                isAreaTouched: true,
             })
         }
         if (actionMeta.action === 'input-blur') {
             this.setState({
-                isAreaTouched: false
+                isAreaTouched: false,
             })
         }
-
-    };
+    }
 
     areaChange = (newValue: any, actionMeta: any) => {
         //console.group('Value Changed');
@@ -114,9 +98,7 @@ class Hero extends Component {
             newArea: newValue,
         })
         this.props.onSelectedArea(newValue)
-    };
-
-
+    }
 
     render() {
         console.log('this is the state', this.state)
@@ -125,15 +107,12 @@ class Hero extends Component {
 
         if (this.state.isAreaTouched) {
             handleAreaSelection = 'modalShow'
-        }
-        else {
+        } else {
             handleAreaSelection = 'modalHide'
         }
 
         const cityStyles = (height = '3rem', fontSize = '1rem') => {
-
             return {
-
                 menu: (provided, state) => ({
                     ...provided,
                     //width: state.selectProps.width,
@@ -161,75 +140,7 @@ class Hero extends Component {
                 placeholder: (defaultStyles, state) => {
                     return {
                         ...defaultStyles,
-                        fontSize: fontSize
-                    }
-                },
-                valueContainer: (provided, state) => ({
-                    ...provided,
-                    height: height,
-                    padding: '0 6px'
-                }),
-
-                input: (provided, state) => ({
-                    ...provided,
-                    margin: '0px',
-                }),
-                indicatorSeparator: state => ({
-                    display: 'none',
-                }),
-                indicatorsContainer: (provided, state) => ({
-                    ...provided,
-                    height: height,
-                }),
-
-
-                singleValue: (provided, state) => {
-                    const opacity = state.isDisabled ? 0.5 : 1;
-                    const transition = 'opacity 300ms';
-
-                    return { ...provided, opacity, transition };
-                }
-            }
-        }
-        const areaStyles = (height = '3rem', newState = this.state, fontSize = '1rem') => {
-
-            return {
-
-                menu: (provided, state) => ({
-                    ...provided,
-                    padding: 10,
-
-                }),
-
-
-                option: (styles, state) => ({
-                    ...styles,
-                    cursor: newState.disabledPointer,
-                    padding: '1rem',
-                    fontSize: fontSize
-                }),
-
-                control: (provided, state) => {
-                    const cursor = state.isDisabled ? 'not-allowed' : 'pointer';
-
-                    return {
-                        ...provided,
-                        cursor: cursor,
                         fontSize: fontSize,
-                        background: newState.disabledBackground,
-                        borderColor: newState.disabledBackground,
-                        minHeight: height,
-                        height: height,
-                        boxShadow: state.isFocused ? null : null,
-
-                    }
-                },
-
-                placeholder: (defaultStyles, state) => {
-                    return {
-                        ...defaultStyles,
-                        color: state.isDisabled ? '#9c9a9a' : '#808080',
-                        fontSize: fontSize
                     }
                 },
                 valueContainer: (provided, state) => ({
@@ -242,7 +153,7 @@ class Hero extends Component {
                     ...provided,
                     margin: '0px',
                 }),
-                indicatorSeparator: state => ({
+                indicatorSeparator: (state) => ({
                     display: 'none',
                 }),
                 indicatorsContainer: (provided, state) => ({
@@ -250,64 +161,124 @@ class Hero extends Component {
                     height: height,
                 }),
 
-
                 singleValue: (provided, state) => {
-                    const opacity = state.isDisabled ? 0.5 : 1;
-                    const transition = 'opacity 300ms';
+                    const opacity = state.isDisabled ? 0.5 : 1
+                    const transition = 'opacity 300ms'
 
-                    return { ...provided, opacity, transition };
-                }
+                    return { ...provided, opacity, transition }
+                },
             }
         }
+        const areaStyles = (
+            height = '3rem',
+            newState = this.state,
+            fontSize = '1rem'
+        ) => {
+            return {
+                menu: (provided, state) => ({
+                    ...provided,
+                    padding: 10,
+                }),
 
+                option: (styles, state) => ({
+                    ...styles,
+                    cursor: newState.disabledPointer,
+                    padding: '1rem',
+                    fontSize: fontSize,
+                }),
+
+                control: (provided, state) => {
+                    const cursor = state.isDisabled ? 'not-allowed' : 'pointer'
+
+                    return {
+                        ...provided,
+                        cursor: cursor,
+                        fontSize: fontSize,
+                        background: newState.disabledBackground,
+                        borderColor: newState.disabledBackground,
+                        minHeight: height,
+                        height: height,
+                        boxShadow: state.isFocused ? null : null,
+                    }
+                },
+
+                placeholder: (defaultStyles, state) => {
+                    return {
+                        ...defaultStyles,
+                        color: state.isDisabled ? '#9c9a9a' : '#808080',
+                        fontSize: fontSize,
+                    }
+                },
+                valueContainer: (provided, state) => ({
+                    ...provided,
+                    height: height,
+                    padding: '0 6px',
+                }),
+
+                input: (provided, state) => ({
+                    ...provided,
+                    margin: '0px',
+                }),
+                indicatorSeparator: (state) => ({
+                    display: 'none',
+                }),
+                indicatorsContainer: (provided, state) => ({
+                    ...provided,
+                    height: height,
+                }),
+
+                singleValue: (provided, state) => {
+                    const opacity = state.isDisabled ? 0.5 : 1
+                    const transition = 'opacity 300ms'
+
+                    return { ...provided, opacity, transition }
+                },
+            }
+        }
 
         const divStyle = {
             backgroundImage: 'url(' + imgUrl + ')',
             width: '100%',
             height: '100vh',
             backgroundSize: 'cover',
-        };
+        }
 
         const cityPlaceholder = 'Choose City'
         const areaPlaceholder = 'Select your area'
 
         const animated = makeAnimated()
 
-
         return (
-            <div style={divStyle} >
-                <Container fliuid='true' className='hero'>
+            <div style={divStyle}>
+                <div fliuid='true' className='hero'>
                     <div className='hero_collapse'>
                         <div className='delivering mt-5'>
-
-                            <Row className="justify-content-md-center">
-
-                                <Col md="auto" className='hero_heading'>
-
-                                    <h1 class="hero_heading-primary">
-                                        <span class="hero_heading-primary--main">Everything you need,</span> <span class="hero_heading-primary--sub">delivered within minutes</span>
+                            <div className='justify-content-md-center'>
+                                <div md='auto' className='hero_heading'>
+                                    <h1 class='hero_heading-primary'>
+                                        <span class='hero_heading-primary--main'>
+                                            Everything you need,
+                                        </span>{' '}
+                                        <span class='hero_heading-primary--sub'>
+                                            delivered within minutes
+                                        </span>
                                     </h1>
+                                </div>
+                                <div md='auto' className='hero_heading-s'>
+                                    <h1 class='hero_heading-s--main'>
+                                        Everything you need delivered within
+                                        minutes
+                                    </h1>
+                                </div>
+                            </div>
 
-
-                                </Col>
-                                <Col md="auto" className='hero_heading-s'>
-
-                                    <h1 class="hero_heading-s--main">
-                                        Everything you need delivered within minutes
-                            </h1>
-
-                                </Col>
-
-
-                            </Row>
-
-                            <Row>
-
-                                <h5 className='delivering_title'>Delivering to</h5>
-                            </Row>
-                            <Row className='delivering_select'>
-
-                                <Col className='delivering_select-options'>
+                            <div>
+                                <h5 className='delivering_title'>
+                                    Delivering to
+                                </h5>
+                            </div>
+                            <div className='delivering_select'>
+                                <div className='delivering_select-options'>
                                     <Select
                                         styles={cityStyles()}
                                         placeholder={cityPlaceholder}
@@ -316,13 +287,16 @@ class Hero extends Component {
                                         onInputChange={this.handleCityChange}
                                         options={cityOptions}
                                         components={animated}
-
                                     />
-
-                                </Col>
-                                <Col className={this.state.disabled ? 'disabledPointer ' : this.state.disabledPointer}>
+                                </div>
+                                <div
+                                    className={
+                                        this.state.disabled
+                                            ? 'disabledPointer '
+                                            : this.state.disabledPointer
+                                    }
+                                >
                                     <Select
-
                                         styles={areaStyles()}
                                         placeholder={areaPlaceholder}
                                         isClearable
@@ -333,27 +307,25 @@ class Hero extends Component {
                                         components={animated}
                                         value={this.state.newArea}
                                     />
-                                </Col>
-
-
-                            </Row>
+                                </div>
+                            </div>
                         </div>
 
                         <div className='services'>
-
-                            <SelectModal isAreaSelected={this.state.isAreaTouched}
+                            <SelectModal
+                                isAreaSelected={this.state.isAreaTouched}
                             >
-                                <SelectOptions className={handleAreaSelection}
-                                    history= {this.props.history}
+                                <SelectOptions
+                                    className={handleAreaSelection}
+                                    history={this.props.history}
                                     selectedArea={this.props.selectedArea}
                                     selectedCity={this.props.selectedCity}
                                 />
                             </SelectModal>
-
                         </div>
                     </div>
-                </Container>
-            </div >
+                </div>
+            </div>
         )
     }
 }
