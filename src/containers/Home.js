@@ -13,6 +13,7 @@ import Header from '../components/Header'
 import card1 from '../assets/images/card-1.png'
 import card2 from '../assets/images/card-2.png'
 import card3 from '../assets/images/card-3.png'
+import avatar from '../assets/images/avatar/avatar.jpg'
 //import Cart from '../components/cart'
 
 class Home extends Component {
@@ -61,18 +62,27 @@ class Home extends Component {
                             heading='Micro-organisms'
                             subHeading=''
                             text='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim .Lorem ipsum dolor sit amet'
+                            creatorImg={avatar}
+                            creatorName='Sara Williams'
+                            createdAt='22/08/2020'
                         />
                         <Card
                             img={card2}
                             heading='Medicine'
                             subHeading='Higher Secondary'
                             text='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim .Lorem ipsum dolor sit amet'
+                            creatorImg={avatar}
+                            creatorName='Sara Williams'
+                            createdAt='22/08/2020'
                         />
                         <Card
                             img={card3}
                             heading='The Solar System'
                             subHeading='Higher Secondary'
                             text='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim .Lorem ipsum dolor sit amet'
+                            creatorImg={avatar}
+                            creatorName='Sara Williams'
+                            createdAt='22/08/2020'
                         />
                     </div>
                 </div>
