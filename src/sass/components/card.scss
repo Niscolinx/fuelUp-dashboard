@@ -1,8 +1,10 @@
 .card-nav{
     list-style: none;
     display: grid;
-    gap: .5rem;
-    justify-content: center;
+    gap: 1rem;
+    padding: 1rem .5rem;
+    font-size: 1.7rem;
+    font-weight: bold;
     grid-template-columns: repeat(8, max-content);
 
     &__item{

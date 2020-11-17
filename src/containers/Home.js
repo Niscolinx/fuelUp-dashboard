@@ -50,11 +50,7 @@ class Home extends Component {
                                 Invitations
                             </Link>
                         </li>
-                        <li>
-                            <Link to='/' className='card-nav__item'>
-                                Attendance
-                            </Link>
-                        </li>
+            
                     </ul>
                     <Card />
                 </div>
