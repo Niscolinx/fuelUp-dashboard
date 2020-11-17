@@ -1,0 +1,12 @@
+@import './abstracts/mixins';
+@import './abstracts/Variables';
+@import './abstracts/animations';
+
+@import "../../node_modules/bootstrap/scss/bootstrap";
+
+@import './base/base';
+@import './base/typography';
+
+@import './components/BurgerIngredients';
+@import './components/CheckoutSummary';
+@import './components/form';
