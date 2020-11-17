@@ -2,8 +2,7 @@ import React, { Component } from 'react'
 //import { Route, Redirect } from 'react-router-dom'
 
 import imgUrl from '../../assets/images/bg_home.jpg'
-import SelectModal from '../Modal/SelectModal'
-import SelectOptions from '../Modal/SelectOptions'
+
 
 import Select from 'react-select'
 import makeAnimated from 'react-select/animated'
@@ -312,16 +311,7 @@ class Hero extends Component {
                         </div>
 
                         <div className='services'>
-                            <SelectModal
-                                isAreaSelected={this.state.isAreaTouched}
-                            >
-                                <SelectOptions
-                                    className={handleAreaSelection}
-                                    history={this.props.history}
-                                    selectedArea={this.props.selectedArea}
-                                    selectedCity={this.props.selectedCity}
-                                />
-                            </SelectModal>
+                        
                         </div>
                     </div>
                 </div>

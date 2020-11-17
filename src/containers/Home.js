@@ -7,7 +7,6 @@ import withErrorHandler from '../components/hoc/withErrorHandler'
 import axios from '../axios'
 
 import Hero from '../components/Layout/Hero'
-import Cards from '../components/Layout/Cards'
 //import Cart from '../components/cart'
 
 class Home extends Component {
@@ -28,9 +27,6 @@ class Home extends Component {
                     />
                 </div>
 
-                <div className='section-cards'>
-                    <Cards />
-                </div>
             </div>
         )
     }
