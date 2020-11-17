@@ -5,13 +5,11 @@ import {IoMdNotifications} from 'react-icons/io'
 import Logo from './Logo'
 import avatar from '../../assets/images/avatar/avatar.jpg'
 import NavigationItems from './Navigation/NavigationItems'
-import SideDrawerToggle from './Navigation/SideDrawerToggle'
 
 const toolbar = (props) => (
     <div className='toolbar'>
-        <SideDrawerToggle clicked={props.openSideDrawer} />
         <Logo />
-        <nav className='desktopOnly'>
+        <nav className='toolbar__nav'>
             <NavigationItems auth={props.auth} logOut={props.logOut} />
         </nav>
 
@@ -19,7 +17,7 @@ const toolbar = (props) => (
             <BsFillGearFill/>
             <IoMdNotifications/>
 
-            <img src={avatar} alt='avatar'/>
+            <img src={avatar} alt='avatar' className='toolbar__avatar'/>
         </div>
     </div>
 )

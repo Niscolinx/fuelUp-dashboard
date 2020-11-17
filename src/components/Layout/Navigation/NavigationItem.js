@@ -1,18 +1,14 @@
-import React from 'react';
+import React from 'react'
 
-import {NavLink} from 'react-router-dom';
+import { Link } from 'react-router-dom'
 
 const navigationItem = (props) => (
-    <li className = 'navigationItem'>
-    <NavLink
-    onClick = {props.auth ? props.logOut : null}
-     to = {props.link}
-    activeClassName = 'active'
-    className = 'navLink'
-    exact = {props.exact}> {props.children}</NavLink>
+    <li>
+        <Link to={props.link} className='navigationItem' exact={props.exact}>
+            {' '}
+            {props.children}
+        </Link>
     </li>
+)
 
-);
-
-
-export default navigationItem;
+export default navigationItem
