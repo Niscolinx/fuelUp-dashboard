@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
+import {AiFillRightSquare} from 'react-icons/ai'
+import {AiFillLeftSquare} from 'react-icons/ai'
 
 import * as actions from '../store/actions/burgerIndex'
 import withErrorHandler from '../components/hoc/withErrorHandler'
