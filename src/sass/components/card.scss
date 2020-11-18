@@ -24,10 +24,25 @@
 
 .cards{
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
+    gap: 2rem;
 }
 
 .card{
+
+    &__img{
+        width: 100%;
+        object-fit: cover;
+    }
+
+    &__subHeading{
+        font-size: .8rem;
+    }
+
+    &__text{
+        color: $primary-color-dark;
+        margin: 1rem 0;
+    }
 
     &__creator{
         display: flex;

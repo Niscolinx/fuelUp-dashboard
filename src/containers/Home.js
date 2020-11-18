@@ -19,7 +19,7 @@ import avatar from '../assets/images/avatar/avatar.jpg'
 class Home extends Component {
     render() {
         return (
-            <div>
+            <>
                 <div className='section-header'>
                     <Header />
                 </div>
@@ -60,7 +60,7 @@ class Home extends Component {
                         <Card
                             img={card1}
                             heading='Micro-organisms'
-                            subHeading=''
+                            subHeading='Higher Secondary'
                             text='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim .Lorem ipsum dolor sit amet'
                             creatorImg={avatar}
                             creatorName='Sara Williams'
@@ -86,7 +86,7 @@ class Home extends Component {
                         />
                     </div>
                 </div>
-            </div>
+            </>
         )
     }
 }
